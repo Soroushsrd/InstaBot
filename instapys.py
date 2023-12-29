@@ -12,9 +12,9 @@ logging.basicConfig(format='%(levelname)s - (%(asctime)s) - %(message)s - (Line:
     encoding='utf-8',
     level=logging.INFO)
 logger=logging.getLogger(__name__)
-# Replace these with your Instagram credentials
 
 logger.info("user has started the bot.")
+# Replace these with your Instagram credentials
 
 USERNAME = "your username"
 PASSWORD = "your passowrd"
@@ -28,7 +28,6 @@ HASHTAG = ["بدنسازی_آقایان","رژیم","کاهش_وزن","مربی"
            "عضلات_شکم","بانوان_ورزشکار","بانوان","بدن","بدنسازی_تغذیه","بدنسازی_زنان",
            "تغذیه","تغذیه_سالم","تغذیه_مناسب","تغذیه_کودک","تغذیه_بدنسازی"]
 
-# Replace this with your desired comment text
 
 driver = webdriver.Chrome()
 
@@ -54,9 +53,11 @@ while True:
         hash=random.choice(HASHTAG)    # Perform a hashtag search
         logger.info("choosing hashtag %s.", hash)
         seed+=1
+        random.seed(seed)
         driver.get(f"https://www.instagram.com/explore/tags/{hash}/")
 
         time.sleep(15)
+        # Replace this with your desired comment text
 
         COMMENT_TEXT = random.choice(["رایگان عضله سازی کن",
                                       "اگر دنبال لاغر شدنی بهم دایرکت بده راهنماییت کنم",
